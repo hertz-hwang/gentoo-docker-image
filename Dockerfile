@@ -7,10 +7,10 @@ COPY 26hz-overlay.conf /etc/portage/repos.conf/
 
 WORKDIR /
 ENV PATH="/root/.local/bin:${PATH}"
-RUN set -eux;
-
+RUN set -eux; \
+\
 	eselect news read --quiet new >/dev/null 2&>1;	\
-    echo 'FEATURES="-ipc-sandbox -network-sandbox -pid-sandbox -userpriv -usersandbox -sandbox"' >> /etc/portage/make.conf;	\
+	echo 'FEATURES="-ipc-sandbox -network-sandbox -pid-sandbox -userpriv -usersandbox -sandbox"' >> /etc/portage/make.conf;	\
 	echo 'EMERGE_DEFAULT_OPTS="--verbose --quiet --keep-going --with-bdeps y --autounmask y --autounmask-continue y"' >> /etc/portage/make.conf;	\
     emerge --jobs $(nproc)	\
         app-eselect/eselect-repository	\
