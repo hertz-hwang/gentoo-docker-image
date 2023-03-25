@@ -29,6 +29,7 @@ RUN set -eux;	\
         	dev-python/pip	\
         	dev-util/pkgdev	\
         	dev-util/pkgcheck	\
+		app-editors/vim \
         	dev-vcs/git;	\
 	rm -rf /var/db/repos/*;	\
 	eix-sync -a
