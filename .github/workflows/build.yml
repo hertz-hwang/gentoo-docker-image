@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE: 26hertz/gentoo-docker-image
+  IMAGE: hertz-hwang/gentoo-docker-image
 
 jobs:
   build-and-push:
